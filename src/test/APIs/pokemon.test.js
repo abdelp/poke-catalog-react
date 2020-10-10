@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getPokemons } from '../../APIs/pokemons';
+import { getPokemons, API_BASE } from '../../APIs/pokemons';
 
 jest.mock('axios');
 
@@ -15,6 +15,10 @@ describe('pokemons API', () => {
 
     axios.get.mockImplementationOnce(() => Promise.resolve(data));
     await expect(getPokemons()).resolves.toEqual(data.data.pokemon_entries);
+
+    expect(axios.get).toHaveBeenCalledWith(
+      API_BASE,
+    );
   });
 
   it('fetches erroneously data from the API', async () => {
