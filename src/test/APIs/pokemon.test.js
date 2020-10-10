@@ -16,35 +16,14 @@ describe('pokemons API', () => {
     axios.get.mockImplementationOnce(() => Promise.resolve(data));
     await expect(getPokemons()).resolves.toEqual(data.data.pokemon_entries);
   });
-});
 
-// jest.mock('axios');
+  it('fetches erroneously data from the API', async () => {
+    const errorMessage = 'Network Error';
  
-// describe('fetchData', () => {
-//   it('fetches successfully data from an API', async () => {
-//     const data = {
-//       data: {
-//         hits: [
-//           {
-//             objectID: '1',
-//             title: 'a',
-//           },
-//           {
-//             objectID: '2',
-//             title: 'b',
-//           },
-//         ],
-//       },
-//     };
+    axios.get.mockImplementationOnce(() =>
+      Promise.reject(new Error(errorMessage)),
+    );
  
-//     axios.get.mockImplementationOnce(() => Promise.resolve(data));
-//   });
- 
-//   it('fetches erroneously data from an API', async () => {
-//     const errorMessage = 'Network Error';
- 
-//     axios.get.mockImplementationOnce(() =>
-//       Promise.reject(new Error(errorMessage)),
-//     );
-//   });
-// });
+    await expect(getPokemons()).rejects.toThrow(errorMessage);
+  });
+});
