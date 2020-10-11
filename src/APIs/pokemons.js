@@ -7,6 +7,8 @@ const pad = (num, size) => {
   return s.substr(s.length-size);
 }
 
+const capitalStr = phrase => phrase.replace(/^\w/, c => c.toUpperCase());
+
 const getPokemon = async (url) => {
   try {
     const {
@@ -19,7 +21,7 @@ const getPokemon = async (url) => {
 
     const img = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
 
-    return { id: pad(id, 3), name, types, img };
+    return { id: id, number: pad(id, 3), name: capitalStr(name), types, img };
   } catch (e) {
     throw new Error(e);
   }
