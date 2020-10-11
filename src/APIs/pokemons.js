@@ -7,8 +7,11 @@ const pad = (num, size) => {
   return s.substr(s.length-size);
 }
 
+<<<<<<< HEAD
 const capitalStr = phrase => phrase.replace(/^\w/, c => c.toUpperCase());
 
+=======
+>>>>>>> 0940669bb7c31e6f16a34000b169ca0e14bd95e5
 const getPokemon = async (url) => {
   try {
     const {
@@ -21,7 +24,11 @@ const getPokemon = async (url) => {
 
     const img = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
 
+<<<<<<< HEAD
     return { id: id, number: pad(id, 3), name: capitalStr(name), types, img };
+=======
+    return { id: pad(id, 3), name, types, img };
+>>>>>>> 0940669bb7c31e6f16a34000b169ca0e14bd95e5
   } catch (e) {
     throw new Error(e);
   }
@@ -29,7 +36,11 @@ const getPokemon = async (url) => {
 
 const getPokemons = async () => {
   try {
+<<<<<<< HEAD
     const { data: { results } } = await axios.get(`${API_BASE}/pokemon?limit=10`);
+=======
+    const { data: { results } } = await axios.get(`${API_BASE}/pokemon?limit=1&offset=9`);
+>>>>>>> 0940669bb7c31e6f16a34000b169ca0e14bd95e5
     let pokemons = [];
 
     await Promise.all(results.map(async (pokemon) => {
