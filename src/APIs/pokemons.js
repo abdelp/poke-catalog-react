@@ -1,15 +1,73 @@
 import axios from 'axios';
 
-const API_BASE = 'https://pokeapi.co/api/v2/pokedex/1';
+const API_BASE = 'https://pokeapi.co/api/v2';
 
-const getPokemons = async () => {
+const pad = (num, size) => {
+  const s = `00${num}`;
+  return s.substr(s.length-size);
+}
+
+const getPokemon = async (url) => {
   try {
-    const RESULT = await axios.get(API_BASE);
+    const {
+      data: {
+        id,
+        name,
+        types
+      }
+    } = await axios.get(url);
 
-    return RESULT.data.pokemon_entries.slice(0, 3);
+    const img = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
+
+    return { id: pad(id, 3), name, types, img };
   } catch (e) {
     throw new Error(e);
   }
 };
 
-export { getPokemons, API_BASE };
+const getPokemons = async () => {
+  try {
+    const { data: { results } } = await axios.get(`${API_BASE}/pokemon?limit=10`);
+    let pokemons = [];
+
+    await Promise.all(results.map(async (pokemon) => {
+      const pokemonData = await getPokemon(pokemon.url);
+
+      pokemons.push(pokemonData);
+    }));
+
+    return pokemons;
+  } catch (e) {
+    throw new Error(e);
+  }
+};
+
+const getPokemonDetails = async (pokemonId) => {
+  try {
+    const {
+      data: {
+        id,
+        name,
+        height,
+        weight,
+        stats,
+        types
+      }
+    } = await axios.get(`${API_BASE}/pokemon/${pokemonId}`);
+    const img = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
+
+    return {
+      id,
+      name,
+      height,
+      weight,
+      stats,
+      types,
+      img
+    }
+  } catch (e) {
+    throw new Error(e);
+  }
+};
+
+export { getPokemons, getPokemonDetails, API_BASE };
