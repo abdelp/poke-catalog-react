@@ -1,27 +1,29 @@
 import { VISIBILITY_FILTERS } from "../constants/visibilityFilters";
 import visibilityFilter from "./reducers/visibilityFilter";
 
-export const getPokemonsState = store => store.list;
+export const getPokemonsState = store => store.data.pokemons;
 
 export const getPokemonList = store =>
-  getPokemonsState(store) ? getPokemonsState(store).allIds : [];
+  getPokemonsState(store) ? getPokemonsState(store) : [];
 
 export const getPokemonById = (store, id) =>
-  getPokemonList(store) ? { ...getPokemonsState(store).byIds[id], id } : {};
-
-export const getPokemons = store =>
-  getPokemonList(store).map(id => getPokemonById(store, id));
+  getPokemonList(store)
+  ? getPokemonsState(store)
+    .filter(pokemon =>
+      pokemon.id === id)
+  : {};
 
 export const getPokemonsByVisibilityFilter = (store, visibilityFilter) => {
-  const allPokemons = getPokemons(store);
+  const allPokemons = getPokemonList(store);
 
-  // switch(visibilityFilter) {
-  //   case VISIBILITY_FILTERS.COMPLETED:
-  //     return allPokemons.filter(pokemon => pokemon.completed);
-  //   case VISIBILITY_FILTERS.INCOMPLETE:
-  //     return allTodos.filter(todo => !todo.completed);
-  //   case VISIBILITY_FILTERS.ALL:
-  //   default:
-      return allPokemons;
-  // }
+  if(visibilityFilter === VISIBILITY_FILTERS.ALL) {
+    return allPokemons;
+  } else {
+    return allPokemons
+    .filter(pokemon =>
+      pokemon.types
+        .filter(type =>
+          type.type.name === visibilityFilter.toLowerCase()).length > 0
+        );
+  }
 };
