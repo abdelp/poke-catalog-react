@@ -32,8 +32,8 @@ const HomePage = ({ pokemons, AddPokemons }) => {
 };
 
 const mapStateToProps = state => {
-  // const { visibilityFilter } = state;
-  const pokemons = getPokemonsState(state); //getTodosByVisibilityFilter(state, visibilityFilter);
+  const { visibilityFilter } = state;
+  const pokemons = getPokemonsByVisibilityFilter(state, visibilityFilter);
   return { pokemons };
 };
 
