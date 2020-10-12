@@ -42,14 +42,4 @@ PokemonItem.propTypes = {
   }).isRequired,
 };
 
-// PokemonTypes.defaultProps = {
-//   pokemon: {
-//     id: null,
-//     img: null,
-//     name: null,
-//     number: null,
-//     types: null,
-//   },
-// };
-
 export default PokemonItem;
