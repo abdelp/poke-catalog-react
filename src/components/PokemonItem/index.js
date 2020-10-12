@@ -1,12 +1,9 @@
 import React from 'react';
-// import cx from 'classnames';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PokemonTypes from '../PokemonTypes';
-// import { toggleTodo } from '../redux/actions';
 
-const Pokemon = ({ pokemon }) => (
-  // console.log(pokemon) ||
+const PokemonItem = ({ pokemon }) => (
   <Link to={{
     pathname: `/pokemon-details/${pokemon.id}`,
     state: { pokemon }
@@ -28,7 +25,5 @@ const Pokemon = ({ pokemon }) => (
 );
 
 export default connect(
-  null,
-  // { toggleTodo }
   null
-)(Pokemon);
+)(PokemonItem);

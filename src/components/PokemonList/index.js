@@ -1,5 +1,5 @@
 import React from 'react';
-import Pokemon from '../Pokemon';
+import PokemonItem from '../PokemonItem';
 import { connect } from 'react-redux';
 
 const PokemonList = ({ pokemons, list }) => (
@@ -7,7 +7,7 @@ const PokemonList = ({ pokemons, list }) => (
     { list && list.length
       ? list.map(pokemon => {
 
-        return <Pokemon
+        return <PokemonItem
           key={`pokemon-${pokemon.id}`}
           pokemon={pokemon}
           />
