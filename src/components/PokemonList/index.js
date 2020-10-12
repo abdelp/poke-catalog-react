@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PokemonItem from '../PokemonItem';
 
 const PokemonList = ({ list }) => (
@@ -13,5 +14,13 @@ const PokemonList = ({ list }) => (
       : 'No pokemons captured :('}
   </div>
 );
+
+PokemonList.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.object),
+};
+
+PokemonList.defaultProps = {
+  list: [],
+};
 
 export default PokemonList;
