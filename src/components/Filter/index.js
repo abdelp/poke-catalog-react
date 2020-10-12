@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { connect } from 'react-redux';
-import { VISIBILITY_FILTERS } from '../../constants/visibilityFilters';
+import VISIBILITY_FILTERS from '../../constants/visibilityFilters';
 import { setFilter } from '../../redux/actions';
 
 const Filter = ({ activeFilter, setFilter }) => {

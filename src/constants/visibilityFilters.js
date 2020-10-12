@@ -1,4 +1,4 @@
-export const VISIBILITY_FILTERS = {
+const VISIBILITY_FILTERS = {
   ALL: 'ALL',
   BUG: 'BUG',
   GRASS: 'GRASS',
@@ -6,3 +6,5 @@ export const VISIBILITY_FILTERS = {
   FIRE: 'FIRE',
   FLYING: 'FLYING',
 };
+
+export default VISIBILITY_FILTERS;

@@ -1,5 +1,4 @@
-import { VISIBILITY_FILTERS } from '../constants/visibilityFilters';
-import visibilityFilter from './reducers/visibilityFilter';
+import VISIBILITY_FILTERS from '../constants/visibilityFilters';
 
 export const getPokemonsState = store => store.data.pokemons;
 
