@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { connect } from 'react-redux';
 import { VISIBILITY_FILTERS } from '../../constants/visibilityFilters';
 import { setFilter } from '../../redux/actions';
 
-const VisibilityFilters = ({ activeFilter, setFilter }) => {
+const Filter = ({ activeFilter, setFilter }) => {
   const handleOnChangeEvent = event => setFilter(event.target.value);
 
   return (
@@ -35,7 +36,8 @@ const VisibilityFilters = ({ activeFilter, setFilter }) => {
 
 const mapStateToProps = state => ({ activeFilter: state.visibilityFilter });
 
+// VisibilityFilters
 export default connect(
   mapStateToProps,
   { setFilter },
-)(VisibilityFilters);
+)(Filter);
