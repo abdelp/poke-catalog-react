@@ -37,7 +37,7 @@ PokemonItem.propTypes = {
     id: PropTypes.number.isRequired,
     img: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    number: PropTypes.number.isRequired,
+    number: PropTypes.string.isRequired,
     types: PropTypes.arrayOf(PropTypes.object).isRequired,
   }).isRequired,
 };
