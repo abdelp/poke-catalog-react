@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const DataBox = ({ height, weight }) => (
   <div className="data-box">
@@ -12,5 +13,10 @@ const DataBox = ({ height, weight }) => (
     </div>
   </div>
 );
+
+DataBox.propTypes = {
+  height: PropTypes.number.isRequired,
+  weight: PropTypes.number.isRequired,
+};
 
 export default DataBox;
