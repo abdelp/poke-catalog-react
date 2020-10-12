@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 const PokemonTypes = ({ types }) => (
@@ -13,5 +14,13 @@ const PokemonTypes = ({ types }) => (
     ))}
   </>
 );
+
+PokemonTypes.propTypes = {
+  types: PropTypes.arrayOf(PropTypes.object),
+};
+
+PokemonTypes.defaultProps = {
+  types: [],
+};
 
 export default PokemonTypes;
