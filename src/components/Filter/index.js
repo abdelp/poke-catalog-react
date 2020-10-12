@@ -14,7 +14,6 @@ const Filter = ({ activeFilter, setFilter }) => {
         id="pokemon-types-select"
         onChange={handleOnChangeEvent}
       >
-
         {Object.keys(VISIBILITY_FILTERS).map(filterKey => {
           const currentFilter = VISIBILITY_FILTERS[filterKey];
           return (
@@ -36,7 +35,15 @@ const Filter = ({ activeFilter, setFilter }) => {
 
 const mapStateToProps = state => ({ activeFilter: state.visibilityFilter });
 
-// VisibilityFilters
+Filter.propTypes = {
+  activeFilter: PropTypes.string,
+  setFilter: PropTypes.func.isRequired,
+};
+
+Filter.defaultProps = {
+  activeFilter: 'ALL',
+};
+
 export default connect(
   mapStateToProps,
   { setFilter },
