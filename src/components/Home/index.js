@@ -4,17 +4,16 @@ import { connect } from 'react-redux';
 import Filter from '../Filter';
 import PokemonList from '../PokemonList';
 import { getPokemons } from '../../APIs/pokemons';
-import { getPokemonsByVisibilityFilter, getPokemonsState } from '../../redux/selectors';
+import { getPokemonsByVisibilityFilter } from '../../redux/selectors';
 import { AddPokemons } from '../../redux/actions';
 
 const HomePage = ({ pokemons, AddPokemons }) => {
-
-  const handleFetchPokemons = async () => {    
+  const handleFetchPokemons = async () => {
     try {
-      const result = await getPokemons(); 
+      const result = await getPokemons();
       AddPokemons(result);
-    } catch {
-      // dispatchStories({ type: 'STORIES_FETCH_FAILURE' });
+    } catch (e) {
+      throw new Error(e);
     }
   };
 
@@ -23,12 +22,12 @@ const HomePage = ({ pokemons, AddPokemons }) => {
   }, []);
 
   return (
-  <div>
-    <h1>Home Page</h1>
-    <Filter />
-    <PokemonList list={pokemons} />
-  </div>
-)
+    <div>
+      <h1>Home Page</h1>
+      <Filter />
+      <PokemonList list={pokemons} />
+    </div>
+  );
 };
 
 const mapStateToProps = state => {
@@ -39,5 +38,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { AddPokemons }
+  { AddPokemons },
 )(HomePage);
