@@ -15,13 +15,27 @@ const getPokemon = async (url) => {
       data: {
         id,
         name,
-        types
+        height,
+        weight,
+        stats,
+        types,
+        abilities
       }
     } = await axios.get(url);
 
     const img = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
 
-    return { id: id, number: pad(id, 3), name: capitalStr(name), types, img };
+    return {       
+      id,
+      number: pad(id, 3),
+      name: capitalStr(name),
+      height,
+      weight,
+      stats,
+      types,
+      abilities,
+      img
+    };
   } catch (e) {
     throw new Error(e);
   }
@@ -29,7 +43,7 @@ const getPokemon = async (url) => {
 
 const getPokemons = async () => {
   try {
-    const { data: { results } } = await axios.get(`${API_BASE}/pokemon?limit=10`);
+    const { data: { results } } = await axios.get(`${API_BASE}/pokemon`);
     let pokemons = [];
 
     await Promise.all(results.map(async (pokemon) => {
@@ -44,33 +58,4 @@ const getPokemons = async () => {
   }
 };
 
-const getPokemonDetails = async (pokemonId) => {
-  try {
-    const {
-      data: {
-        id,
-        name,
-        height,
-        weight,
-        stats,
-        types
-      }
-    } = await axios.get(`${API_BASE}/pokemon/${pokemonId}`);
-    const img = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
-
-    return {
-      id,
-      number: pad(i, 3),
-      name: capitalStr(name),
-      height,
-      weight,
-      stats,
-      types,
-      img
-    }
-  } catch (e) {
-    throw new Error(e);
-  }
-};
-
-export { getPokemons, getPokemonDetails, API_BASE };
+export { getPokemons, API_BASE };
