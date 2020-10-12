@@ -1,8 +1,7 @@
 import React from 'react';
-import cx from 'classnames';
 import StatBar from '../StatBar';
 
-const PokemonStats = ({ stats }) => (
+const PokemonStats = () => (
   <>
     <StatBar />
     <StatBar />
