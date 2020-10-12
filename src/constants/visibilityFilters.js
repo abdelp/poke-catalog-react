@@ -4,5 +4,5 @@ export const VISIBILITY_FILTERS = {
   GRASS: 'GRASS',
   POISON: 'POISON',
   FIRE: 'FIRE',
-  FLYING: 'FLYING'
+  FLYING: 'FLYING',
 };

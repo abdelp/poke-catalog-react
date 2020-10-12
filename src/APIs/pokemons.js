@@ -4,12 +4,12 @@ const API_BASE = 'https://pokeapi.co/api/v2';
 
 const pad = (num, size) => {
   const s = `00${num}`;
-  return s.substr(s.length-size);
-}
+  return s.substr(s.length - size);
+};
 
 const capitalStr = phrase => phrase.replace(/^\w/, c => c.toUpperCase());
 
-const getPokemon = async (url) => {
+const getPokemon = async url => {
   try {
     const {
       data: {
@@ -19,13 +19,13 @@ const getPokemon = async (url) => {
         weight,
         stats,
         types,
-        abilities
-      }
+        abilities,
+      },
     } = await axios.get(url);
 
     const img = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
 
-    return {       
+    return {
       id,
       number: pad(id, 3),
       name: capitalStr(name),
@@ -34,7 +34,7 @@ const getPokemon = async (url) => {
       stats,
       types,
       abilities,
-      img
+      img,
     };
   } catch (e) {
     throw new Error(e);
@@ -44,9 +44,9 @@ const getPokemon = async (url) => {
 const getPokemons = async () => {
   try {
     const { data: { results } } = await axios.get(`${API_BASE}/pokemon`);
-    let pokemons = [];
+    const pokemons = [];
 
-    await Promise.all(results.map(async (pokemon) => {
+    await Promise.all(results.map(async pokemon => {
       const pokemonData = await getPokemon(pokemon.url);
 
       pokemons.push(pokemonData);

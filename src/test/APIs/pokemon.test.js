@@ -16,11 +16,9 @@ describe('pokemons API', () => {
 
   it('fetches erroneously data from the API', async () => {
     const errorMessage = 'Network Error';
- 
-    axios.get.mockImplementationOnce(() =>
-      Promise.reject(new Error(errorMessage)),
-    );
- 
+
+    axios.get.mockImplementationOnce(() => Promise.reject(new Error(errorMessage)));
+
     await expect(getPokemons()).rejects.toThrow(errorMessage);
   });
 });

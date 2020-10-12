@@ -6,14 +6,21 @@ import PokemonAbilities from '../PokemonAbilities';
 import PokemonStats from '../PokemonStats';
 import DataBox from '../DataBox';
 
-const PokemonDetailsPage = (props) => {
+const PokemonDetailsPage = props => {
   const { location: { state: { pokemon } } } = props;
 
   console.log(props);
 
   return (
     <>
-      <h1 className="pokemon-name">{pokemon.name} <span>#{pokemon.number}</span></h1>
+      <h1 className="pokemon-name">
+        {pokemon.name}
+        {' '}
+        <span>
+          #
+          {pokemon.number}
+        </span>
+      </h1>
       <div className="details-container">
         <div className="left-side">
           <div className="img-container">

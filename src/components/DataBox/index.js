@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DataBox = ({ height, weight }) =>  (
+const DataBox = ({ height, weight }) => (
   <div className="data-box">
     <div>
       <h3>Height</h3>

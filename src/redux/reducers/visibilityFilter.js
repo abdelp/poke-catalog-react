@@ -4,9 +4,9 @@ import { VISIBILITY_FILTERS } from '../../constants/visibilityFilters';
 const initialState = VISIBILITY_FILTERS.ALL;
 
 const visibilityFilter = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case SET_FILTER: {
-      return action.payload.filter
+      return action.payload.filter;
     }
     default: {
       return state;

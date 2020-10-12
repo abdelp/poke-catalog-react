@@ -1,13 +1,15 @@
-import { POKEMONS_FETCH_INIT, POKEMONS_FETCH_SUCCESS, POKEMONS_FETCH_FAILURE, ADD_POKEMONS } from '../actionTypes';
+import {
+  POKEMONS_FETCH_INIT, POKEMONS_FETCH_SUCCESS, POKEMONS_FETCH_FAILURE, ADD_POKEMONS,
+} from '../actionTypes';
 
 const initialState = {
   isLoading: false,
   isError: false,
-  pokemons: []
+  pokemons: [],
 };
 
-export default function(state = initialState, action) {
-  switch(action.type) {
+export default function (state = initialState, action) {
+  switch (action.type) {
     case POKEMONS_FETCH_INIT:
       return {
         ...state,
@@ -29,4 +31,4 @@ export default function(state = initialState, action) {
     default:
       return state;
   }
-};
+}
