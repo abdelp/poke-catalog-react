@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Filter from '../Filter';
@@ -34,6 +35,15 @@ const mapStateToProps = state => {
   const { visibilityFilter } = state;
   const pokemons = getPokemonsByVisibilityFilter(state, visibilityFilter);
   return { pokemons };
+};
+
+HomePage.propTypes = {
+  pokemons: PropTypes.arrayOf(PropTypes.object),
+  AddPokemons: PropTypes.func.isRequired,
+};
+
+HomePage.defaultProps = {
+  pokemons: [],
 };
 
 export default connect(
