@@ -20,6 +20,7 @@ const HomePage = ({ pokemons, AddPokemons }) => {
 
   useEffect(() => {
     handleFetchPokemons();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
