@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 
-import './App.css';
+import './App.scss';
 import Navigation from '../Navigation';
 import HomePage from '../Home';
 import PokemonDetailsPage from '../PokemonDetails';
