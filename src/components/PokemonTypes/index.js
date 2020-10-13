@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 const PokemonTypes = ({ types }) => (
-  <>
+  <div className="types-container">
     {types.map(type => (
       <div
         key={type.type.name}
@@ -12,7 +12,7 @@ const PokemonTypes = ({ types }) => (
         {type.type.name}
       </div>
     ))}
-  </>
+  </div>
 );
 
 PokemonTypes.propTypes = {
