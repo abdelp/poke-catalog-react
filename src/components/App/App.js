@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Route,
   Switch,
 } from 'react-router-dom';
@@ -13,17 +12,15 @@ import PokemonDetailsPage from '../PokemonDetails';
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Navigation />
-        <hr />
+    <>
+      <Navigation />
+      <hr />
 
-        <Switch>
-          <Route exact path={ROUTES.HOME} component={HomePage} />
-          <Route path={ROUTES.POKEMON_DETAILS} component={PokemonDetailsPage} />
-        </Switch>
-      </div>
-    </Router>
+      <Switch>
+        <Route exact path={ROUTES.HOME} component={HomePage} />
+        <Route path={ROUTES.POKEMON_DETAILS} component={PokemonDetailsPage} />
+      </Switch>
+    </>
   );
 }
 
