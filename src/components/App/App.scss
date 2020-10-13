@@ -6,6 +6,23 @@ body {
   position: relative;
 }
 
+.pokemons-list {
+  a {
+    text-decoration: none;
+  }
+
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: black;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .page-header {
   background-color: #252525;
   height: 80px;
@@ -57,23 +74,6 @@ body {
     border-radius: 5px;
     width: 300px;
   }
-}
-
-.pokemons-list {
-  a {
-    text-decoration: none;
-  }
-
-  a:link,
-  a:visited,
-  a:hover,
-  a:active {
-    color: black;
-  }
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .pokemon-card {
