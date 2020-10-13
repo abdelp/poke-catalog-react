@@ -18,10 +18,10 @@ const PokemonItem = ({ pokemon }) => {
           <img src={img} alt={name} />
         </header>
         <main className="card-body">
-          <h6>
+          <h3>
             #
             {number}
-          </h6>
+          </h3>
           <h2>{name}</h2>
         </main>
         <footer className="card-footer">
