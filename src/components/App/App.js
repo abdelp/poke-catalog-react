@@ -13,13 +13,15 @@ import PokemonDetailsPage from '../PokemonDetails';
 function App() {
   return (
     <>
-      <Navigation />
-      <hr />
-
-      <Switch>
-        <Route exact path={ROUTES.HOME} component={HomePage} />
-        <Route path={ROUTES.POKEMON_DETAILS} component={PokemonDetailsPage} />
-      </Switch>
+      <header className="page-header">
+        <Navigation />
+      </header>
+      <main className="content">
+        <Switch>
+          <Route exact path={ROUTES.HOME} component={HomePage} />
+          <Route path={ROUTES.POKEMON_DETAILS} component={PokemonDetailsPage} />
+        </Switch>
+      </main>
     </>
   );
 }
