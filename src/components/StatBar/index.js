@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const StatBar = () => {
   const children = [];
   for (let i = 0; i < 15; i += 1) {
-    children.push(<li></li>);
+    children.push(<li key={`bar-${i}`}></li>);
   }
 
   return (

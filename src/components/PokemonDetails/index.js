@@ -38,9 +38,9 @@ const PokemonDetailsPage = props => {
             <img src={img} alt={name} />
           </div>
           <div className="bottom-decoration">
-            <div class="circle"></div>
+            <div className="circle"></div>
 
-            <div class="burger-icon">
+            <div className="burger-icon">
               <div></div>
               <div></div>
               <div></div>

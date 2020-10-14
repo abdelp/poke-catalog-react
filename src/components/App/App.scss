@@ -286,11 +286,17 @@ h1.pokemon-name {
 
   .right-side {
     padding: 10px;
+    border: 1px solid #a21616;
+    border-radius: 5px;
+    margin: 0 5px;
   }
 }
 
 .pokemon-stats {
   display: flex;
+  padding: 10px;
+  border: 1px solid #a21616;
+  border-radius: 5px;
 
   .stat-bar {
     list-style-type: none;
