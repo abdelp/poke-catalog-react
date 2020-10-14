@@ -2,7 +2,7 @@
 
 # React Pokédex
 
-> A Podédex App build with React for Microverse Capstone Project.
+> A Pokédex App built with React for Microverse Capstone Project.
 
 ![screenshot](./app_screenshot.png)
 
