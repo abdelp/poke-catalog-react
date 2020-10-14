@@ -6,54 +6,85 @@
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- React
+- HTML5
+- SASS
+- NPM
+- Heroku
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Poke-Link](https://safe-island-02494.herokuapp.com/)
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Git
+- npm
+
 ### Setup
+
+Clone or download the repo:
+
+```
+git clone https://github.com/abdelp/poke-catalog-react.git
+```
 
 ### Install
 
+Go to the root folder and install the npm packages:
+
+```
+npm i
+```
+
 ### Usage
+
+After installing all of the npm packages, run the start script command:
+
+```
+npm start
+```
 
 ### Run tests
 
+To run the tests go to the root folder of the project and run the test script command:
+
+```
+npm test
+```
+
 ### Deployment
 
+To be able to deploy the app on Heroku you need to have installed the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) first.
 
+After that, you need to run the command to create your new project there:
 
-## Authors
+```
+heroku create -b https://github.com/mars/create-react-app-buildpack.git
+```
 
-👤 **Author1**
+And push the files there:
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+```
+git push heroku master
+```
 
-👤 **Author2**
+## Author
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+👤 **Abdel Pérez**
+
+- Github: [@abdelp](https://github.com/abdelp/)
+- Twitter: [@AbdelPerez11](https://twitter.com/abdelperez11)
+- Linkedin: [Abdel Pérez](https://www.linkedin.com/in/abdel-perez/)
+
 
 ## 🤝 Contributing
 
@@ -67,9 +98,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse Inc.
 
 ## 📝 License
 
