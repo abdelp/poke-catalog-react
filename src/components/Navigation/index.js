@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 
 const Navigation = () => (
-  <ul className='nav'>
+  <ul className="nav">
     <li>
       <Link to={ROUTES.HOME}>POKEDEX</Link>
     </li>

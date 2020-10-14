@@ -21,12 +21,11 @@ const HomePage = ({ pokemons, AddPokemons, FetchFailure }) => {
 
   useEffect(() => {
     handleFetchPokemons();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div>
-      <h1 className='title'>Pokedex</h1>
+      <h1 className="title">Pokedex</h1>
       <Filter />
       <PokemonList list={pokemons} />
     </div>
@@ -42,6 +41,7 @@ const mapStateToProps = state => {
 HomePage.propTypes = {
   pokemons: PropTypes.arrayOf(PropTypes.object),
   AddPokemons: PropTypes.func.isRequired,
+  FetchFailure: PropTypes.func.isRequired,
 };
 
 HomePage.defaultProps = {

@@ -12,8 +12,8 @@ export const AddPokemons = content => ({
   },
 });
 
-export const FetchFailure = content => ({
-  type: POKEMONS_FETCH_FAILURE
+export const FetchFailure = () => ({
+  type: POKEMONS_FETCH_FAILURE,
 });
 
 export const setFilter = filter => ({ type: SET_FILTER, payload: { filter } });

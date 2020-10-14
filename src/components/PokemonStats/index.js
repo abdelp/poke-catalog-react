@@ -2,7 +2,7 @@ import React from 'react';
 import StatBar from '../StatBar';
 
 const PokemonStats = () => (
-  <div className='pokemon-stats'>
+  <div className="pokemon-stats">
     <div>
       <StatBar />
       <p><strong>HP</strong></p>
@@ -17,14 +17,21 @@ const PokemonStats = () => (
     </div>
     <div>
       <StatBar />
-      <p><strong>Special<br/>Attack</strong></p>
+      <p>
+        <strong>
+          Special
+          <br />
+          Attack
+        </strong>
+      </p>
     </div>
     <div>
       <StatBar />
       <p>
         <strong>
-        Special<br/>
-        Defense
+          Special
+          <br />
+          Defense
         </strong>
       </p>
     </div>

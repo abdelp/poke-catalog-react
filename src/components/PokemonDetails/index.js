@@ -31,19 +31,19 @@ const PokemonDetailsPage = props => {
       <div className="details-container">
         <div className="left-side">
           <div className="top-decoration">
-            <div></div>
-            <div></div>
+            <div />
+            <div />
           </div>
           <div className="img-container">
             <img src={img} alt={name} />
           </div>
           <div className="bottom-decoration">
-            <div className="circle"></div>
+            <div className="circle" />
 
             <div className="burger-icon">
-              <div></div>
-              <div></div>
-              <div></div>
+              <div />
+              <div />
+              <div />
             </div>
           </div>
         </div>
