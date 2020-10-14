@@ -11,7 +11,9 @@ import { AddPokemons, FetchInit, FetchFailure } from '../../redux/actions';
 
 import pokeball from '../../assets/svg/pokeball.svg';
 
-const HomePage = ({ pokemons, isLoading, isError, AddPokemons, FetchInit, FetchFailure }) => {
+const HomePage = ({
+  pokemons, isLoading, isError, AddPokemons, FetchInit, FetchFailure,
+}) => {
   const handleFetchPokemons = async () => {
     FetchInit();
 
@@ -56,10 +58,15 @@ HomePage.propTypes = {
   pokemons: PropTypes.arrayOf(PropTypes.object),
   AddPokemons: PropTypes.func.isRequired,
   FetchFailure: PropTypes.func.isRequired,
+  FetchInit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool,
+  isError: PropTypes.bool,
 };
 
 HomePage.defaultProps = {
   pokemons: [],
+  isLoading: false,
+  isError: false,
 };
 
 export default connect(

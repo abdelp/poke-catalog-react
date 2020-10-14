@@ -13,10 +13,10 @@ export const AddPokemons = content => ({
 });
 
 export const FetchInit = () => ({
-  type: POKEMONS_FETCH_INIT
-})
+  type: POKEMONS_FETCH_INIT,
+});
 
-export const FetchFailure = state => ({
+export const FetchFailure = () => ({
   type: POKEMONS_FETCH_FAILURE,
 });
 
