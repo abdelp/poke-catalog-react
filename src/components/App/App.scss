@@ -59,7 +59,7 @@ body {
   right: 0;
   left: 0;
   margin: 0 auto;
-  background-color: #c30f0f;
+  background-color: #d30a40;
 }
 
 .title {
@@ -175,6 +175,21 @@ h1.pokemon-name {
   text-align: center;
 }
 
+.data-box {
+  display: flex;
+  width: 350px;
+  justify-content: flex-start;
+  border: 1px solid rgb(128, 0, 0);
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(65, 65, 143);
+  color: #e2e2e2;
+
+  div {
+    width: 50%;
+  }
+}
+
 .details-container {
   display: flex;
   flex-wrap: wrap;
@@ -188,6 +203,8 @@ h1.pokemon-name {
     border-radius: 20px 20px 20px 0;
     margin-bottom: 5px;
     z-index: 2;
+    border-bottom: 4px solid rgb(104, 104, 104);
+    border-right: 4px solid rgb(104, 104, 104);
 
     .top-decoration {
       display: flex;
@@ -195,7 +212,7 @@ h1.pokemon-name {
       justify-content: space-between;
       margin-bottom: 5px;
       width: 60px;
-      
+
       div {
         border: 1px solid black;
         width: 10px;
@@ -216,7 +233,7 @@ h1.pokemon-name {
         background-color: red;
         border-radius: 50%;
         border: 1px solid black;
-        margin-left: 60px;
+        margin-left: 65px;
         margin-top: 5px;
       }
 
@@ -247,30 +264,15 @@ h1.pokemon-name {
   .left-side::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -4px;
     left: 0;
-    border-top: 80px solid #e2e2e2;
-    border-left: 80px solid #c30f0f;
+    border-top: 85px solid #e2e2e2;
+    border-left: 85px solid #d30a40;
     width: 0;
   }
 
   .right-side {
     padding: 10px;
-  }
-}
-
-.data-box {
-  display: flex;
-  width: 350px;
-  justify-content: flex-start;
-  border: 1px solid rgb(128, 0, 0);
-  padding: 5px;
-  border-radius: 5px;
-  background-color: rgb(65, 65, 143);
-  color: #e2e2e2;
-
-  div {
-    width: 50%;
   }
 }
 
@@ -283,7 +285,7 @@ h1.pokemon-name {
     margin-top: 0;
     padding-inline-start: 0;
     margin-right: 3px;
-    
+
     li {
       border: 1px solid rgb(107, 3, 3);
       border-radius: 5px;
@@ -301,7 +303,7 @@ h1.pokemon-name {
 
 .abilities-container {
   display: flex;
-  
+
   .pokemon-ability {
     width: 95px;
     text-align: center;
