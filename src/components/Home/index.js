@@ -7,10 +7,16 @@ import Filter from '../Filter';
 import PokemonList from '../PokemonList';
 import { getPokemons } from '../../APIs/pokemons';
 import { getPokemonsByVisibilityFilter } from '../../redux/selectors';
-import { AddPokemons, FetchFailure } from '../../redux/actions';
+import { AddPokemons, FetchInit, FetchFailure } from '../../redux/actions';
 
-const HomePage = ({ pokemons, AddPokemons, FetchFailure }) => {
+import pokeball from '../../assets/svg/pokeball.svg';
+
+const HomePage = ({
+  pokemons, isLoading, isError, AddPokemons, FetchInit, FetchFailure,
+}) => {
   const handleFetchPokemons = async () => {
+    FetchInit();
+
     try {
       const result = await getPokemons();
       AddPokemons(result);
@@ -27,28 +33,43 @@ const HomePage = ({ pokemons, AddPokemons, FetchFailure }) => {
     <div>
       <h1 className="title">Pokédex</h1>
       <Filter />
-      <PokemonList list={pokemons} />
+
+      {isError && <p className="error-msg">Something went wrong ...</p>}
+
+      {isLoading ? (
+        <div className="loader-container">
+          <img src={pokeball} className="loading-pokeball" alt="pokeball-icon" />
+        </div>
+      ) : (
+        <PokemonList list={pokemons} />
+      )}
+
     </div>
   );
 };
 
 const mapStateToProps = state => {
-  const { visibilityFilter } = state;
+  const { data: { isLoading, isError }, visibilityFilter } = state;
   const pokemons = sortBy(getPokemonsByVisibilityFilter(state, visibilityFilter), 'number');
-  return { pokemons };
+  return { pokemons, isLoading, isError };
 };
 
 HomePage.propTypes = {
   pokemons: PropTypes.arrayOf(PropTypes.object),
   AddPokemons: PropTypes.func.isRequired,
   FetchFailure: PropTypes.func.isRequired,
+  FetchInit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool,
+  isError: PropTypes.bool,
 };
 
 HomePage.defaultProps = {
   pokemons: [],
+  isLoading: false,
+  isError: false,
 };
 
 export default connect(
   mapStateToProps,
-  { AddPokemons, FetchFailure },
+  { AddPokemons, FetchInit, FetchFailure },
 )(HomePage);
