@@ -23,4 +23,20 @@ describe('actions', () => {
 
     expect(actions.setFilter(types.ALL)).toEqual(expectedAction);
   });
+
+  it('should return change the state of isLoading to true', () => {
+    const expectedAction = {
+      type: types.POKEMONS_FETCH_INIT
+    };
+
+    expect(actions.FetchInit(types.POKEMONS_FETCH_INIT)).toEqual(expectedAction);
+  });
+
+  it('should return change the state of isError to true', () => {
+    const expectedAction = {
+      type: types.POKEMONS_FETCH_FAILURE
+    };
+
+    expect(actions.FetchFailure(types.POKEMONS_FETCH_FAILURE)).toEqual(expectedAction);
+  });
 });
