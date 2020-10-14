@@ -13,4 +13,14 @@ describe('actions', () => {
 
     expect(actions.AddPokemons(pokemons)).toEqual(expectedAction);
   });
-})
+
+  it('should create an action to set the filter of types of pokemons', () => {
+    const filter = types.ALL;
+    const expectedAction = {
+      type: types.SET_FILTER,
+      payload: { filter }
+    };
+
+    expect(actions.setFilter(types.ALL)).toEqual(expectedAction);
+  });
+});
