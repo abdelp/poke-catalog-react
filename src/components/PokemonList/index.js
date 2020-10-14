@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PokemonItem from '../PokemonItem';
+import pokeball from '../../assets/svg/pokeball.svg';
 
 const PokemonList = ({ list }) => (
   <div className="pokemons-list">
@@ -11,7 +12,7 @@ const PokemonList = ({ list }) => (
           pokemon={pokemon}
         />
       ))
-      : 'No pokemons captured :('}
+      : <img src={pokeball} className="loading-pokeball" alt="pokeball-icon" />}
   </div>
 );
 

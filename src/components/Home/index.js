@@ -6,15 +6,15 @@ import Filter from '../Filter';
 import PokemonList from '../PokemonList';
 import { getPokemons } from '../../APIs/pokemons';
 import { getPokemonsByVisibilityFilter } from '../../redux/selectors';
-import { AddPokemons } from '../../redux/actions';
+import { AddPokemons, FetchFailure } from '../../redux/actions';
 
-const HomePage = ({ pokemons, AddPokemons }) => {
+const HomePage = ({ pokemons, AddPokemons, FetchFailure }) => {
   const handleFetchPokemons = async () => {
     try {
       const result = await getPokemons();
       AddPokemons(result);
     } catch (e) {
-      throw new Error(e);
+      FetchFailure();
     }
   };
 
@@ -49,5 +49,5 @@ HomePage.defaultProps = {
 
 export default connect(
   mapStateToProps,
-  { AddPokemons },
+  { AddPokemons, FetchFailure },
 )(HomePage);
