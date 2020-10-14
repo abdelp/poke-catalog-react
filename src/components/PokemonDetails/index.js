@@ -30,21 +30,34 @@ const PokemonDetailsPage = props => {
       </h1>
       <div className="details-container">
         <div className="left-side">
+          <div className="top-decoration">
+            <div></div>
+            <div></div>
+          </div>
           <div className="img-container">
             <img src={img} alt={name} />
           </div>
-          <div className="stats-container">
-            <PokemonStats stats={stats} />
+          <div className="bottom-decoration">
+            <div class="circle"></div>
+
+            <div class="burger-icon">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
         </div>
         <div className="right-side">
           <DataBox height={height} weight={weight} />
 
-          <h2>Type</h2>
+          <h2 className="type-title">Type</h2>
           <PokemonTypes types={types} />
 
-          <h2>Abilities</h2>
+          <h2 className="abilities-title">Abilities</h2>
           <PokemonAbilities abilities={abilities} />
+        </div>
+        <div className="stats-container">
+          <PokemonStats stats={stats} />
         </div>
       </div>
     </>

@@ -127,7 +127,7 @@ body {
   display: flex;
 
   .pokemon-type {
-    width: 75px;
+    width: 95px;
     text-align: center;
     padding: 5px;
     border-radius: 3px;
@@ -166,6 +166,182 @@ body {
   }
 
   .pokemon-type.grass {
+    background-color: #3dc33d;
+    color: white;
+  }
+}
+
+h1.pokemon-name {
+  text-align: center;
+}
+
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+
+  .left-side {
+    position: relative;
+    padding: 20px 20px 10px 20px;
+    background-color: #e2e2e2;
+    border-radius: 20px 20px 20px 0;
+    margin-bottom: 5px;
+    z-index: 2;
+
+    .top-decoration {
+      display: flex;
+      margin: 0 auto;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      width: 60px;
+      
+      div {
+        border: 1px solid black;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: red;
+      }
+    }
+
+    .bottom-decoration {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .circle {
+        height: 70px;
+        width: 70px;
+        background-color: red;
+        border-radius: 50%;
+        border: 1px solid black;
+        margin-left: 60px;
+        margin-top: 5px;
+      }
+
+      .burger-icon {
+        div {
+          background-color: black;
+          width: 50px;
+          height: 10px;
+          margin-top: 3px;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .img-container {
+      border: 1px solid #525252;
+      border-radius: 5px;
+      padding: 3px;
+      background-color: white;
+      width: 350px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .left-side::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 80px solid #e2e2e2;
+    border-left: 80px solid #c30f0f;
+    width: 0;
+  }
+
+  .right-side {
+    padding: 10px;
+  }
+}
+
+.data-box {
+  display: flex;
+  width: 350px;
+  justify-content: flex-start;
+  border: 1px solid rgb(128, 0, 0);
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(65, 65, 143);
+  color: #e2e2e2;
+
+  div {
+    width: 50%;
+  }
+}
+
+.pokemon-stats {
+  display: flex;
+
+  .stat-bar {
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: 0;
+    padding-inline-start: 0;
+    margin-right: 3px;
+    
+    li {
+      border: 1px solid rgb(107, 3, 3);
+      border-radius: 5px;
+      width: 60px;
+      height: 10px;
+      margin-bottom: 3px;
+      background-color: #e2e2e2;
+    }
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+.abilities-container {
+  display: flex;
+  
+  .pokemon-ability {
+    width: 95px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 5px;
+    box-shadow: 2px 4px 9px -1px rgb(107, 3, 3);
+  }
+
+  .pokemon-ability.overgrow {
+    background-color: #cd7e30;
+    color: white;
+  }
+
+  .pokemon-ability.shield-dust {
+    background-color: purple;
+    color: white;
+  }
+
+  .pokemon-ability.chlorophyll {
+    background-color: #399cff;
+    color: white;
+  }
+
+  .pokemon-ability.run-away {
+    background-color: #ff5d00;
+    color: white;
+  }
+
+  .pokemon-ability.solar-power {
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  .pokemon-ability.blaze {
+    background-color: darkkhaki;
+    color: white;
+  }
+
+  .pokemon-ability.grass {
     background-color: #3dc33d;
     color: white;
   }
