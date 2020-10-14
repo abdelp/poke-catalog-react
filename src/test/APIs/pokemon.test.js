@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { getPokemon, getPokemons, API_BASE } from '../../APIs/pokemons';
-import pokemons from './pokemons.json';
+import pokemons from '../jsons/pokemons.json';
 import pokemon from './pokemon.json';
 import result from './result.json';
 
