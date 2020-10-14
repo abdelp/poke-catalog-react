@@ -15,6 +15,10 @@
 - NPM
 - Heroku
 
+## Video Presentation
+
+[Presentation](https://www.loom.com/share/43510ca5a33444c4a8ea9ae13a3442eb)
+
 ## Live Demo
 
 [Poke-Link](https://safe-island-02494.herokuapp.com/)
