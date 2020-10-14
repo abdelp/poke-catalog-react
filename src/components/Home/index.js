@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { sortBy } from 'lodash';
 
 import Filter from '../Filter';
 import PokemonList from '../PokemonList';
@@ -34,7 +35,7 @@ const HomePage = ({ pokemons, AddPokemons, FetchFailure }) => {
 
 const mapStateToProps = state => {
   const { visibilityFilter } = state;
-  const pokemons = getPokemonsByVisibilityFilter(state, visibilityFilter);
+  const pokemons = sortBy(getPokemonsByVisibilityFilter(state, visibilityFilter), 'number');
   return { pokemons };
 };
 
