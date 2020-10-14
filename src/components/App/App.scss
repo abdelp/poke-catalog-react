@@ -6,6 +6,15 @@ body {
   position: relative;
 }
 
+.error-msg {
+  color: white;
+  text-align: center;
+}
+
+.loader-container {
+  text-align: center;
+}
+
 .loading-pokeball {
   -webkit-animation: spin 4s linear infinite;
   -moz-animation: spin 4s linear infinite;

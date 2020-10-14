@@ -12,7 +12,7 @@ const PokemonList = ({ list }) => (
           pokemon={pokemon}
         />
       ))
-      : <img src={pokeball} className="loading-pokeball" alt="pokeball-icon" />}
+      : 'No pokemons capture yet'}
   </div>
 );
 
