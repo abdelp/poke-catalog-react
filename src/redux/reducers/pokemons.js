@@ -18,9 +18,9 @@ export default function (state = initialState, action) {
       };
     case POKEMONS_FETCH_SUCCESS:
       return {
+        ...state,
         isLoading: false,
         isError: false,
-        // pokemons: [...state.pokemons, ...action.payload.pokemons],
         pokemons: action.payload.pokemons,
       };
     case POKEMONS_FETCH_FAILURE:
