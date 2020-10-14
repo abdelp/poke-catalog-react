@@ -25,7 +25,7 @@ const HomePage = ({ pokemons, AddPokemons, FetchFailure }) => {
 
   return (
     <div>
-      <h1 className="title">Pokedex</h1>
+      <h1 className="title">Pokédex</h1>
       <Filter />
       <PokemonList list={pokemons} />
     </div>
