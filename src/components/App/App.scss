@@ -1,0 +1,387 @@
+body {
+  background-color: #a21616;
+}
+
+#root {
+  position: relative;
+}
+
+.error-msg {
+  color: white;
+  text-align: center;
+}
+
+.loader-container {
+  text-align: center;
+}
+
+.loading-pokeball {
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+  margin: 20px 0;
+  height: 50px;
+  width: 50px;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.pokemons-list {
+  a {
+    text-decoration: none;
+  }
+
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: black;
+  }
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.page-header {
+  background-color: #252525;
+  height: 80px;
+
+  .nav {
+    margin-top: 0;
+    padding: 20px;
+    list-style-type: none;
+    display: flex;
+
+    li {
+      margin: 0 10px;
+      color: #bebebe;
+
+      a {
+        text-decoration: none;
+      }
+
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: white;
+      }
+    }
+  }
+}
+
+.content {
+  max-width: 98%;
+  position: absolute;
+  border-radius: 10px;
+  top: 60px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  background-color: #d30a40;
+}
+
+.title {
+  text-align: center;
+}
+
+.visibility-filters {
+  text-align: center;
+
+  #pokemon-types-select {
+    padding: 5px;
+    border-radius: 5px;
+    width: 300px;
+  }
+}
+
+.pokemon-card {
+  background-color: crimson;
+  border-radius: 5px;
+  box-shadow: 2px 4px 9px -1px rgb(107, 3, 3);
+  width: 350px;
+  padding: 5px;
+  cursor: pointer;
+  margin: 5px;
+
+  .card-header {
+    border: 1px solid #525252;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: #b2b2b2;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .card-body {
+    background-color: rgb(250, 250, 250);
+    border: 1px solid #525252;
+    border-radius: 5px;
+    margin-top: 2px;
+    padding: 5px;
+  }
+
+  h3:first-child {
+    color: gray;
+    text-decoration: none;
+    margin: 0;
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+    margin: 0;
+  }
+
+  transition: all 0.5s;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.03);
+}
+
+.types-container {
+  display: flex;
+
+  .pokemon-type {
+    width: 95px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 5px;
+    box-shadow: 2px 4px 9px -1px rgb(107, 3, 3);
+  }
+
+  .pokemon-type.bug {
+    background-color: #cd7e30;
+    color: white;
+  }
+
+  .pokemon-type.poison {
+    background-color: purple;
+    color: white;
+  }
+
+  .pokemon-type.water {
+    background-color: #399cff;
+    color: white;
+  }
+
+  .pokemon-type.fire {
+    background-color: #ff5d00;
+    color: white;
+  }
+
+  .pokemon-type.normal {
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  .pokemon-type.flying {
+    background-color: darkkhaki;
+    color: white;
+  }
+
+  .pokemon-type.grass {
+    background-color: #3dc33d;
+    color: white;
+  }
+}
+
+h1.pokemon-name {
+  text-align: center;
+}
+
+.data-box {
+  display: flex;
+  width: 350px;
+  justify-content: flex-start;
+  border: 1px solid rgb(128, 0, 0);
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(65, 65, 143);
+  color: #e2e2e2;
+
+  div {
+    width: 50%;
+  }
+}
+
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+
+  .left-side {
+    position: relative;
+    padding: 20px 20px 10px 20px;
+    background-color: #e2e2e2;
+    border-radius: 20px 20px 20px 0;
+    margin-bottom: 5px;
+    z-index: 2;
+    border-bottom: 4px solid rgb(104, 104, 104);
+    border-right: 4px solid rgb(104, 104, 104);
+
+    .top-decoration {
+      display: flex;
+      margin: 0 auto;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      width: 60px;
+
+      div {
+        border: 1px solid black;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: red;
+      }
+    }
+
+    .bottom-decoration {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .circle {
+        height: 70px;
+        width: 70px;
+        background-color: red;
+        border-radius: 50%;
+        border: 1px solid black;
+        margin-left: 65px;
+        margin-top: 5px;
+      }
+
+      .burger-icon {
+        div {
+          background-color: black;
+          width: 50px;
+          height: 10px;
+          margin-top: 3px;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .img-container {
+      border: 1px solid #525252;
+      border-radius: 5px;
+      padding: 3px;
+      background-color: white;
+      width: 350px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .left-side::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    border-top: 85px solid #e2e2e2;
+    border-left: 85px solid #d30a40;
+    width: 0;
+  }
+
+  .right-side {
+    padding: 10px;
+    border: 1px solid #a21616;
+    border-radius: 5px;
+    margin: 0 5px;
+  }
+}
+
+.pokemon-stats {
+  display: flex;
+  padding: 10px;
+  border: 1px solid #a21616;
+  border-radius: 5px;
+
+  .stat-bar {
+    list-style-type: none;
+    margin-left: 0;
+    margin-top: 0;
+    padding-inline-start: 0;
+    margin-right: 3px;
+
+    li {
+      border: 1px solid rgb(107, 3, 3);
+      border-radius: 5px;
+      width: 60px;
+      height: 10px;
+      margin-bottom: 3px;
+      background-color: #e2e2e2;
+    }
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+.abilities-container {
+  display: flex;
+
+  .pokemon-ability {
+    width: 95px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 5px;
+    box-shadow: 2px 4px 9px -1px rgb(107, 3, 3);
+  }
+
+  .pokemon-ability.overgrow {
+    background-color: #cd7e30;
+    color: white;
+  }
+
+  .pokemon-ability.shield-dust {
+    background-color: purple;
+    color: white;
+  }
+
+  .pokemon-ability.chlorophyll {
+    background-color: #399cff;
+    color: white;
+  }
+
+  .pokemon-ability.run-away {
+    background-color: #ff5d00;
+    color: white;
+  }
+
+  .pokemon-ability.solar-power {
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  .pokemon-ability.blaze {
+    background-color: darkkhaki;
+    color: white;
+  }
+
+  .pokemon-ability.grass {
+    background-color: #3dc33d;
+    color: white;
+  }
+}

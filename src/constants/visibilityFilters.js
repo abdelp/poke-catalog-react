@@ -1,0 +1,10 @@
+const VISIBILITY_FILTERS = {
+  ALL: 'ALL',
+  BUG: 'BUG',
+  GRASS: 'GRASS',
+  POISON: 'POISON',
+  FIRE: 'FIRE',
+  FLYING: 'FLYING',
+};
+
+export default VISIBILITY_FILTERS;
